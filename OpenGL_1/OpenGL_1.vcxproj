@@ -159,12 +159,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OpenGL_file_1.h" />
+    <ClInclude Include="OpenGL_tut_workshop.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OpenGL_1.cpp" />
     <ClCompile Include="OpenGL_file_1.cpp" />
+    <ClCompile Include="OpenGL_tut_workshop.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

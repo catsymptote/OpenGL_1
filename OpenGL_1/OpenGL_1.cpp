@@ -3,6 +3,7 @@
 //#include <iostream>	// For exit(0);
 
 #include "OpenGL_file_1.h"
+#include "OpenGL_tut_workshop.h"
 
 #include <GL/freeglut.h>
 
@@ -11,7 +12,8 @@
 
 int main(int argc, char** argv)
 {
-	OpenGL_main(argc, argv);
+	//OpenGL_main(argc, argv);
+	OpenGL_tut_workshop_main(argc, argv);
 }
 
 
@@ -58,7 +60,7 @@ int main( void )
 	// Initialize the library
 	if ( !glfwInit( ) )
 	{
-	return -1;
+		return -1;
 	}
 
 	// Create a windowed mode window and its OpenGL context
@@ -66,8 +68,8 @@ int main( void )
 
 	if ( !window )
 	{
-	glfwTerminate( );
-	return -1;
+		glfwTerminate( );
+		return -1;
 	}
 
 	// Make the window's context current
@@ -75,9 +77,9 @@ int main( void )
 
 	float vertices[] =
 	{
-	0, 0.5, 0.0, // top corner
-	-0.5, -0.5, 0.0, // bottom left corner
-	0.5, -0.5, 0.0 // bottom right corner
+		0, 0.5, 0.0, // top corner
+		-0.5, -0.5, 0.0, // bottom left corner
+		0.5, -0.5, 0.0 // bottom right corner
 	};
 
 	// Loop until the user closes the window

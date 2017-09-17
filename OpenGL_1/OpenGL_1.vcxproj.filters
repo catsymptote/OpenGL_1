@@ -27,6 +27,9 @@
     <ClInclude Include="OpenGL_file_1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="OpenGL_tut_workshop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -39,6 +42,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="OpenGL_file_1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL_tut_workshop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
