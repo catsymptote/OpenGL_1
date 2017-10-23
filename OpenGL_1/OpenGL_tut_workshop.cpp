@@ -53,6 +53,58 @@ void tut_display()
 	glutSwapBuffers();	// End of frame (writes new frame)
 }
 
+
+void square_display()
+{
+	/// Based on: http://www.dgp.toronto.edu/~ah/csc418/fall_2001/tut/square
+	/*
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glLoadIdentity();
+	glColor3f(0.0, 1.0, 0.0);
+	glBegin(GL_POLYGON);
+		glVertex3f(2.0, 4.0, 0.0);
+		glVertex3f(8.0, 4.0, 0.0);
+		glVertex3f(8.0, 6.0, 0.0);
+		glVertex3f(2.0, 6.0, 0.0);
+	glEnd();
+	glFlush();
+	*/
+
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);	// Begining of frame (overwrites last frame)
+	{
+		counter += 1;	// Rotates based on frame counts
+		if (counter > 350)
+		{
+			counter = -350.0;
+		}
+
+		// 1st square
+		glLoadIdentity();	// Resets rotation, so it won't spin, just be rotated, but still.
+							// Translate before rotate, if you want it to rotate around its own axis, and not around the creation point.
+		glTranslatef((-2*counter)/ 100, -1.0, -6.0);	// Move by x, y, z
+		glRotatef(4*counter, 2.5, 2.0, 0.0);	// Rotates the object. Degrees, around vectX, vectY, vectZ
+		glBegin(GL_POLYGON);
+			glVertex3f(2.0, 1.0, 0.0);
+			glVertex3f(4.0, 1.0, 0.0);
+			glVertex3f(5.0, 3.0, 0.0);
+			glVertex3f(3.0, 3.0, 0.0);
+		glEnd();
+
+		// 2nd square
+		glLoadIdentity();	// Resets rotation, so it won't spin, just be rotated, but still.
+		glTranslatef(counter / 100, -1.5, -7.0);	// Move by x, y, z
+		glRotatef(-3 * counter, 0.0, 1.0, 0.0);	// Rotates the object. Degrees, around vectX, vectY, vectZ
+		glBegin(GL_POLYGON);
+			glVertex3f(0.0, 0.0, 0.0);
+			glVertex3f(1.0, 0.0, 0.0);
+			glVertex3f(1.0, -1.0, 0.0);
+			glVertex3f(0.0, -1.0, 0.0);
+		glEnd();
+	}
+	glutSwapBuffers();	// End of frame (writes new frame)
+}
+
+
 void tut_reshape(int w, int h)
 {
 	// Makes it such that it scales with screen size as well.
@@ -87,8 +139,8 @@ int OpenGL_tut_workshop_main(int argc, char** argv)
 
 	initOpenGL();
 
-	glutDisplayFunc(tut_display);
-	glutIdleFunc(tut_display);
+	glutDisplayFunc(square_display);
+	glutIdleFunc(square_display);
 	glutReshapeFunc(tut_reshape);
 
 	glutMainLoop();
